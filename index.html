@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Почта — создание открыток</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="site-nav" aria-label="Навигация">
+        <a class="brand" href="#">✉ Почта</a>
+        <div><a href="#create">Создать открытку</a><a href="#saved">Мои открытки</a></div>
+    </nav>
+    <main>
+        <header class="hero">
+            <div class="hero-copy">
+                <span class="eyebrow">МАЛЕНЬКИЕ ЗНАКИ ВНИМАНИЯ</span>
+                <h1><span>Красивые открытки</span></h1>
+                <p>Для близкого человека, хорошего друга или просто так.<br>Выберите оформление и добавьте немного тепла.</p>
+                <a class="hero-button" href="#create">Создать свою открытку <span aria-hidden="true">♡</span></a>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+                <span class="spark spark-one">✦</span><span class="spark spark-two">♡</span>
+                <div class="mini-card"><span>Для тебя</span><strong>♡</strong><small>с теплом</small></div>
+                <div class="envelope"><span>♥</span></div>
+                <span class="flower">✿</span>
+            </div>
+        </header>
+        <div class="section-title" id="create"><h2>Ваша маленькая история</h2></div>
+        <div class="editor">
+            <form id="cardForm">
+                <h2>Что напишем?</h2>
+                <label for="text">Текст открытки</label>
+                <textarea id="text" rows="4" maxlength="600" placeholder="Напишите пожелание"></textarea>
+                <label for="sender">От кого</label>
+                <input id="sender" type="text" maxlength="80" placeholder="Ваше имя">
+                <label for="recipient">Кому</label>
+                <input id="recipient" type="text" maxlength="80" placeholder="Имя получателя">
+                <div class="actions">
+                    <button id="sendButton" type="submit" disabled>Отправить</button>
+                    <div class="theme-choice">
+                        <label for="theme">Тема открытки</label>
+                        <select id="theme">
+                            <option value="light">Светлая</option>
+                            <option value="dark">Тёмная</option>
+                            <option value="flowers">Цветочная</option>
+                            <option value="birthday">Праздничная</option>
+                            <option value="winter">Новогодняя</option>
+                        </select>
+                    </div>
+                </div>
+                <p id="message" role="status">Заполните все три поля, чтобы отправить открытку в историю.</p>
+            </form>
+            <section class="preview-section">
+                <h2>Вот что получается <span aria-hidden="true">♡</span></h2>
+                <article id="preview" class="postcard light">
+                    <div class="decoration" aria-hidden="true">✉</div>
+                    <p class="to" id="previewTo">Кому: получатель</p>
+                    <p class="card-text" id="previewText">Здесь появится ваше пожелание.</p>
+                    <p class="from" id="previewFrom">От: ваше имя</p>
+                </article>
+            </section>
+        </div>
+        <section class="history-section" id="saved">
+            <div class="history-heading"><div><span class="eyebrow">СОХРАНЁННЫЕ МОМЕНТЫ</span><h2>Ваши открытки</h2></div><button id="clearHistory" type="button" class="secondary">Очистить историю</button></div>
+            <p id="emptyHistory"><span aria-hidden="true">✉</span>Здесь будут жить ваши открытки.<br><small>Создайте первую — и она появится в этой коллекции.</small></p>
+            <div id="history"></div>
+        </section>
+    </main>
+    <footer>Почта <span aria-hidden="true">♡</span> Маленькая открытка — большое внимание.</footer>
+    <script src="script.js"></script>
+</body>
+</html>
